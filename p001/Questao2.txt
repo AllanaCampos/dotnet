@@ -1,0 +1,11 @@
+No .NET estão disponíveis os seguintes tipos de dados numéricos inteiros (exemplos em C#):
+
+tipos   Exemplo                     Descrição
+byte	byte a = 0XA;               Inteiro de 8 bits sem sinal (0 a 255).
+sbyte	sbyte b = sbyte.MaxValue;   Inteiro de 8 bits com sinal (-127 a 128).
+ushort	ushort c = 55;              Inteiro de 16 bits sem sinal (0 a 65.535).
+short	short d = 10;               Inteiro de 16 bits com sinal (-32.768 a 32.767).
+uint	uint e = uint.MinValue;     Inteiro de 32 bits sem sinal (0 a 4.294.967.295).
+int	    int f = 7;                  Inteiro de 32 bits com sinal (-2.147.483.648 a 2.147.483.647).
+ulong	ulong g = 4578;             Inteiro de 64 bits sem sinal (0 a 18.446.744.073.709.551.615).
+long	long h = -78;               Inteiro de 64 bits com sinal (-9.223.372.036.854.775.808 a 9.223.372.036.854.775.807).

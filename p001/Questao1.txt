@@ -1,0 +1,33 @@
+Para verificar se o .NET SDK foi instalado corretamente deve-se abrir o prompt de comando e digitar:
+dotnet --version
+Caso após o comando estiver indicado a versão do .NET SDK significa que foi instalado e está pronto para uso.
+Caso após o comando estiver indicado que o prompt não o reconhece significa que não foi instalado corretamente ou não está configurado no PATH.
+
+Para verificar as versôes do .NET SDK instaladas pode utilizar o seguinte comando:
+dotnet --list-sdks
+
+Para verificar as versões do runtime do .NET instaladas pode utilizar o seguinte comando:
+dotnet --list-runtimes
+
+Para remover versões instaladas pode utilizar a ferramenta de desinstalação do .NET (dotnet-core-uninstall).
+Para verificar as versões que podem ser desinstaladas deve-se utilizar o comando:
+dotnet-core-uninstall list 
+Caso queira filtrar a lista, o comando permite a utilização de algumas opções como:
+--sdk : lista todos os SDKs do .NET que podem ser desinstalados
+--x64 : lista todos os SDKs do .NET x64 que podem ser desinstalados
+
+Após identificar as versões que serão desinstaladas deve-se utilizar o seguinte comando:
+dotnet-core-uninstall remove
+E adicionar a versão que será desinstalada no comando. Também é permitido utilizar alguns argumentos como:
+--all : remove todos os SDKs e runtimes do .NET
+--all-but-latest : remove os SDKs e os runtimes do .NET exceto a ultima versão
+
+Para mais informações de remoção: https://learn.microsoft.com/pt-br/dotnet/core/additional-tools/uninstall-tool?tabs=windows
+
+Para atualizar o .NET SDK deve-se utilizar o comando:
+dotnet tool update
+Este comando permite a utilização de opções que podem ser vizualizados em: https://learn.microsoft.com/pt-br/dotnet/core/tools/dotnet-tool-update
+
+Para atualizar os pacotes de modelo instalados deve-se utilizar o comando:
+dotnet new update
+Este comando permite a utilização de opções que podem ser vizualizados em: https://learn.microsoft.com/pt-br/dotnet/core/tools/dotnet-new-update

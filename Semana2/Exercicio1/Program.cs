@@ -19,7 +19,7 @@ foreach (int i in list){
 List<string> city = new List<string>() {"Mutuípe", "Jiquiriçá", "Ubaíra", "Santo Antônio de Jesus", "Laje", "Salvador"};
 city.Add("Ilhéus");
 city.Add("Itabuna");
-list<string> city2 = city.Where()
+List<string> city2 = city.Where(chr => chr.Contains("a")).ToList();
 Console.WriteLine("");
 #endregion
 

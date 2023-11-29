@@ -25,7 +25,7 @@ public class Relatorios
 
     public static void pacientesSexo(List<Paciente> pacientes){
         Console.WriteLine("Informe o sexo dos pacientes que deseja observar");
-        string sexo = Console.ReadLine() ?? "Feminino";
+        string sexo = (Console.ReadLine() ?? "FEMININO").ToUpper();
         var sexoPacientes = pacientes.Where(p => p.Sexo == sexo).ToList();
         foreach ( var paciente in sexoPacientes){
             Console.WriteLine($"Nome: {paciente.Nome} CPF: {paciente.CPF} Sexo: {paciente.Sexo} Idade: {paciente.getIdade()} Sintomas: {paciente.Sintomas}");

@@ -30,4 +30,14 @@ public class Paciente
         }
     }
     public string Sintomas {get; set;}
+    public int getIdade(){
+        int idade =  DateTime.Now.Year - dataNascimento.Year;
+        if(dataNascimento.Month < DateTime.Now.Month)
+            idade--;
+        else if( dataNascimento.Month == DateTime.Now.Month){
+            if(dataNascimento.Day < DateTime.Now.Day)
+                idade--;
+        }
+        return idade;
+    }
 }

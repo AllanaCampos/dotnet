@@ -7,6 +7,7 @@ class Program{
         List<Medico> medicos = new List<Medico>();
         int op = -1;
         do{
+            Console.WriteLine("<----------MENU---------->");
             Console.WriteLine("1- Adicionar Paciente");
             Console.WriteLine("2- Adicionar Médico");
             Console.WriteLine("3- Relatórios");
@@ -30,6 +31,7 @@ class Program{
     static public void Relatorio(List<Paciente> pacientes, List<Medico> medicos){
         int op = -1;
         do{
+            Console.WriteLine("<----------RELATÓRIOS---------->");
             Console.WriteLine("1- Médicos com idade entre dois valores");
             Console.WriteLine("2- Pacientes com idade entre dois valores");
             Console.WriteLine("3- Pacientes com o mesmo sexo");

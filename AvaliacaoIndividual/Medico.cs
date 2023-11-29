@@ -29,31 +29,32 @@ public class Medico
         return idade;
     }
     
-    public Medico(string nome, string cpf, string crm, DateTime nascimento){
-        this.Nome = nome;
-        this.CPF = cpf;
-        this.CRM = crm;
-        this.dataNascimento = nascimento;
-    }
     public static void addMedico(List<Medico>medicos){
+        Medico medico = new Medico();
         string nome, cpf, crm;
         DateTime nascimento;
         Console.WriteLine("Informe o nome do medico");
-        nome = Console.ReadLine();
+        nome = Console.ReadLine() ?? "";
+        medico.Nome = nome;
         Console.WriteLine("Infome o CPF do medico");
-        cpf = Console.ReadLine();
+        cpf = Console.ReadLine()?? "";
         if(medicos.Exists(m => m.CPF == cpf)){
             throw new Exception("CPF já existe");
         }
+        else{
+            medico.CPF = cpf;
+        }
         Console.WriteLine("Infome o CRM do medico");
-        crm = Console.ReadLine();
+        crm = Console.ReadLine() ?? "";
         if(medicos.Exists(m => m.CRM == crm)){
             throw new Exception("CRM já existe");
         }
-        Console.WriteLine("Infome a data de aniversario do médico");
-        nascimento = DateTime.Parse(Console.ReadLine());
-        
-        Medico medico = new Medico(nome, cpf, crm, nascimento);
+        else{
+            medico.CRM = crm;
+        }
+        Console.WriteLine("Infome a data de nascimento do médico");
+        nascimento = DateTime.Parse(Console.ReadLine() ?? "01/01/2001");
+        medico.dataNascimento = nascimento;
         medicos.Add(medico);
 
     }

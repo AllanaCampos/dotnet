@@ -14,10 +14,12 @@ class Program{
             op = Int32.Parse(Console.ReadLine() ?? "-1");
             switch(op){
                 case 1:
-                    Paciente.addPaciente(pacientes);
+                    try{Paciente.addPaciente(pacientes);}
+                    catch(Exception ex){Console.WriteLine(ex.Message);}
                     break;
                 case 2:
-                    Medico.addMedico(medicos);
+                    try{Medico.addMedico(medicos);}
+                    catch(Exception ex){Console.WriteLine(ex.Message);}
                     break;
             }
         }while(op != 0);        

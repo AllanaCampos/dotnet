@@ -3,16 +3,17 @@ public class Medico
 {
     public string Nome{get; set;}
     public DateTime dataNascimento{get; set;}
+    private string _cpf;
     public string CPF{
         get{
-            return CPF;
+            return this._cpf;
         } 
         set{
             if(value.Length != 11){
                 throw new Exception("CPF possui apenas com 11 dígitos");
             }
             else{
-                this.CPF = value;
+                this._cpf = value;
             }
         }
     }

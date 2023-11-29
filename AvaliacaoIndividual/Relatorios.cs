@@ -28,7 +28,7 @@ public class Relatorios
         string sexo = (Console.ReadLine() ?? "FEMININO").ToUpper();
         var sexoPacientes = pacientes.Where(p => p.Sexo == sexo).ToList();
         foreach ( var paciente in sexoPacientes){
-            Console.WriteLine($"Nome: {paciente.Nome} CPF: {paciente.CPF} Sexo: {paciente.Sexo} Idade: {paciente.getIdade()} Sintomas: {paciente.Sintomas}");
+            Console.WriteLine($"Nome: {paciente.Nome} CPF: {paciente.CPF} Idade: {paciente.getIdade()} Sintomas: {paciente.Sintomas}");
         }
     }
 
@@ -51,8 +51,8 @@ public class Relatorios
     public static void aniversariantes(List<Paciente> pacientes, List<Medico> medicos){
         Console.WriteLine("Informe qual mês dos aniversariantes que deseja observar (Indique o mês como número)");
         int mes = Int32.Parse(Console.ReadLine() ?? "0");
-        var pacientesAniversariantes = pacientes.Where(p => p.dataNascimento.Month == (mes -1)).ToList();
-        var medicosAniversariantes = medicos.Where(m => m.dataNascimento.Month == (mes -1)).ToList();
+        var pacientesAniversariantes = pacientes.Where(p => p.dataNascimento.Month == mes).ToList();
+        var medicosAniversariantes = medicos.Where(m => m.dataNascimento.Month == mes).ToList();
         Console.WriteLine("Pacientes Aniversariantes:");
         foreach ( var paciente in pacientesAniversariantes){
             Console.WriteLine($"Nome: {paciente.Nome} CPF: {paciente.CPF} Sexo: {paciente.Sexo} Idade: {paciente.getIdade()} Sintomas: {paciente.Sintomas}");

@@ -17,16 +17,17 @@ public class Paciente
             }
         }
     }
+    private string _sexo;
     public string Sexo{
         get{
-            return this.Sexo;
+            return this._sexo;
         }
         set{
-            if(value != "Feminino" && value != "Masculino"){
+            if(value != "FEMININO" && value != "MASCULINO"){
                 throw new Exception("Valor inválido");
             }
             else{
-                this.Sexo = value;
+                this._sexo = value;
             }
         }
     }

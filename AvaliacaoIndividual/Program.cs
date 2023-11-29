@@ -21,6 +21,9 @@ class Program{
                     try{Medico.addMedico(medicos);}
                     catch(Exception ex){Console.WriteLine(ex.Message);}
                     break;
+                case 3:
+                    Relatorio(pacientes, medicos);
+                    break;
             }
         }while(op != 0);        
     }

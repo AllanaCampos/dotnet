@@ -49,7 +49,18 @@ public class Relatorios
     }
 
     public static void aniversariantes(List<Paciente> pacientes, List<Medico> medicos){
-        
+        Console.WriteLine("Informe qual mês dos aniversariantes que deseja observar (Indique o mês como número)");
+        int mes = Int32.Parse(Console.ReadLine() ?? "0");
+        var pacientesAniversariantes = pacientes.Where(p => p.dataNascimento.Month == (mes -1)).ToList();
+        var medicosAniversariantes = medicos.Where(m => m.dataNascimento.Month == (mes -1)).ToList();
+        Console.WriteLine("Pacientes Aniversariantes:");
+        foreach ( var paciente in pacientesAniversariantes){
+            Console.WriteLine($"Nome: {paciente.Nome} CPF: {paciente.CPF} Sexo: {paciente.Sexo} Idade: {paciente.getIdade()} Sintomas: {paciente.Sintomas}");
+        }
+        Console.WriteLine("Médicos Aniversariantes:");
+        foreach ( var medico in medicosAniversariantes){
+            Console.WriteLine($"Nome: {medico.Nome} CPF: {medico.CPF} CRM: {medico.CRM} Idade: {medico.getIdade()}");
+        } 
     }
     
 }

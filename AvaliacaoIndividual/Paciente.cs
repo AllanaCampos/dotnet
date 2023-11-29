@@ -40,4 +40,9 @@ public class Paciente
         }
         return idade;
     }
+    public Paciente(string nome, string cpf, DateTime nascimento, string sexo, string sintomas){
+        this.Nome = nome;
+        this.CPF = cpf;
+        this.dataNascimento = nascimento;
+    }
 }

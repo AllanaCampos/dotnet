@@ -1,8 +1,23 @@
+using System.Runtime;
+
 namespace Namespace;
 public class Pessoa
 {
     public string Nome{get; set;}
-    public DateTime dataNascimento{get; set;}
+    private DateTime _dataNascimento;
+    public DateTime dataNascimento{
+        get{
+            return _dataNascimento;
+        }
+        set{
+            if(value.Year > DateTime.Now.Year){
+                throw new Exception("Ano inválido");
+            }
+            else{
+                this._dataNascimento = value;
+            }
+        }
+    }
     private string _cpf;
     public string CPF{
         get{

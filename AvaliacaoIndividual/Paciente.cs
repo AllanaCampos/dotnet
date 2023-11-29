@@ -1,22 +1,6 @@
 namespace Namespace;
-public class Paciente
+public class Paciente : Pessoa
 {
-    public string Nome{get;set;}
-    public DateTime dataNascimento{get; set;}
-    private string _cpf;
-    public string CPF{
-        get{
-            return _cpf;
-        } 
-        set{
-            if(value.Length != 11){
-                throw new Exception("CPF possui apenas com 11 dígitos");
-            }
-            else{
-                this._cpf = value;
-            }
-        }
-    }
     private string _sexo;
     public string Sexo{
         get{
@@ -32,17 +16,6 @@ public class Paciente
         }
     }
     public string Sintomas {get; set;}
-    public int getIdade(){
-        int idade =  DateTime.Now.Year - dataNascimento.Year;
-        if(dataNascimento.Month < DateTime.Now.Month)
-            idade--;
-        else if( dataNascimento.Month == DateTime.Now.Month){
-            if(dataNascimento.Day < DateTime.Now.Day)
-                idade--;
-        }
-        return idade;
-    }
-
     public static void addPaciente(List<Paciente>pacientes){
         Paciente paciente = new Paciente();
         string nome, cpf, sexo, sintomas;

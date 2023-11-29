@@ -44,5 +44,7 @@ public class Paciente
         this.Nome = nome;
         this.CPF = cpf;
         this.dataNascimento = nascimento;
+        this.Sintomas = sintomas;
+        this.Sexo = sexo;
     }
 }

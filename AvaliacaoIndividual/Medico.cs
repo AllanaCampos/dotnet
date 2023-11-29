@@ -29,5 +29,10 @@ public class Medico
         return idade;
     }
     
-
+    public Medico(string nome, string cpf, string crm, DateTime nascimento){
+        this.Nome = nome;
+        this.CPF = cpf;
+        this.CRM = crm;
+        this.dataNascimento = nascimento;
+    }
 }
